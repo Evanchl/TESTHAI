@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.659,=adortl.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.689,=E:\NIMIS\DataConn\ufrmDBSetting.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.639,=dbrtl.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.743,=E:\NIMIS\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.548,=E:\NIMIS\DataConn\uDM.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.920,=E:\NIMIS\DataConn\uDataSourceInfo.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.568,C:\Users\chhli\Documents\Embarcadero\Studio\Projects\Package1.dproj=E:\NIMIS\DataConn.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.281,=HMKJ_Comm.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.294,=HMKJ_Comm.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.881,=E:\HAIMIS\commm\uDES.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.147,=rtl.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.619,=vcl.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.237,E:\NIMIS\HMKJ_DBConn.dproj=E:\NIMIS\DataConn.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.035,=HMKJ_DES.dcp</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.816,=rtl.dcp</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.708,C:\Users\chhli\Documents\Embarcadero\Studio\Projects\Package1.dproj=E:\HAIMIS\Login.dproj</Transaction>
+    <Transaction>2018-08-25 22:01:36.758,=E:\HAIMIS\Login\ufrmLogin.pas</Transaction>
+    <Transaction>2018-08-25 22:02:01.798,=HMKJ_DBConn.dcp</Transaction>
+    <Transaction>2018-08-25 22:02:28.555,=HMKJ_Comm.dcp</Transaction>
+    <Transaction>2018-08-25 22:02:44.585,=dxCoreRS24.dcp</Transaction>
+    <Transaction>2018-08-25 22:02:44.602,=cxLibraryRS24.dcp</Transaction>
+    <Transaction>2018-08-25 22:02:44.621,=dxGDIPlusRS24.dcp</Transaction>
+    <Transaction>2018-08-25 22:02:44.638,=dxThemeRS24.dcp</Transaction>
+    <Transaction>2018-08-25 22:02:44.654,=dxServerModeRS24.dcp</Transaction>
+    <Transaction>2018-08-25 22:02:44.670,=cxDataRS24.dcp</Transaction>
+    <Transaction>2018-08-25 22:02:44.690,=dxADOServerModeRS24.dcp</Transaction>
+  </Transactions>
+</BorlandProject>

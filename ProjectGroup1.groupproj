@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8062CC78-C431-4A2E-8CEB-1017135604A6}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="HAIMIS.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PatientInfo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HMKJ_DBConn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HMKJ_Comm.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HMKJ_DES.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Login.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="HAIMIS">
+        <MSBuild Projects="HAIMIS.dproj"/>
+    </Target>
+    <Target Name="HAIMIS:Clean">
+        <MSBuild Projects="HAIMIS.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HAIMIS:Make">
+        <MSBuild Projects="HAIMIS.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PatientInfo">
+        <MSBuild Projects="PatientInfo.dproj"/>
+    </Target>
+    <Target Name="PatientInfo:Clean">
+        <MSBuild Projects="PatientInfo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PatientInfo:Make">
+        <MSBuild Projects="PatientInfo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HMKJ_DBConn">
+        <MSBuild Projects="HMKJ_DBConn.dproj"/>
+    </Target>
+    <Target Name="HMKJ_DBConn:Clean">
+        <MSBuild Projects="HMKJ_DBConn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HMKJ_DBConn:Make">
+        <MSBuild Projects="HMKJ_DBConn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HMKJ_Comm">
+        <MSBuild Projects="HMKJ_Comm.dproj"/>
+    </Target>
+    <Target Name="HMKJ_Comm:Clean">
+        <MSBuild Projects="HMKJ_Comm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HMKJ_Comm:Make">
+        <MSBuild Projects="HMKJ_Comm.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HMKJ_DES">
+        <MSBuild Projects="HMKJ_DES.dproj"/>
+    </Target>
+    <Target Name="HMKJ_DES:Clean">
+        <MSBuild Projects="HMKJ_DES.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HMKJ_DES:Make">
+        <MSBuild Projects="HMKJ_DES.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Login">
+        <MSBuild Projects="Login.dproj"/>
+    </Target>
+    <Target Name="Login:Clean">
+        <MSBuild Projects="Login.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Login:Make">
+        <MSBuild Projects="Login.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="HAIMIS;PatientInfo;HMKJ_DBConn;HMKJ_Comm;HMKJ_DES;Login"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="HAIMIS:Clean;PatientInfo:Clean;HMKJ_DBConn:Clean;HMKJ_Comm:Clean;HMKJ_DES:Clean;Login:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="HAIMIS:Make;PatientInfo:Make;HMKJ_DBConn:Make;HMKJ_Comm:Make;HMKJ_DES:Make;Login:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

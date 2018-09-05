@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.907,=E:\NIMIS\PatientInfo\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.438,=E:\NIMIS\PatientInfo\ufrmPatientInfo.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.807,C:\Users\chhli\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\NIMIS\PatientInfo\PatientInfo.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.819,=C:\Users\chhli\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.843,E:\NIMIS\PatientInfo.dproj=E:\NIMIS\PatientInfo\PatientInfo.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
