@@ -8,7 +8,8 @@
 unit uComm;
 
 interface
-uses Classes,DB,DBClient,ADODB,cxGridCustomView, cxGridCustomTableView,cxGridDBTableView,uDM,Forms,System.SysUtils;
+uses Classes,DB,DBClient,ADODB,cxGridCustomView, cxGridCustomTableView,cxGridDBTableView,uDM,Forms,System.SysUtils,
+  MidasLib;
   //设置字段内容显示位置
   procedure SetDataSetFieldPosition(ADataSet: TDataSet; AAlignment: TAlignment = taLeftJustify);
   //创建列字段
@@ -20,6 +21,7 @@ uses Classes,DB,DBClient,ADODB,cxGridCustomView, cxGridCustomTableView,cxGridDBT
 
 var
   cdsOprCutWound: TClientDataSet; //手术切口数据集
+  cdsOprASA: TClientDataSet;//手术麻醉风险等级数据集
 implementation
 
 procedure SetDataSetFieldPosition(ADataSet: TDataSet; AAlignment: TAlignment = taLeftJustify);
@@ -75,6 +77,29 @@ begin
         qry.Next;
       end;
     end;
+    //麻醉风险等级
+    qry.Filtered := False;
+    qry.Filter := 'TABLE_HEAD_CODE=''ASA''';
+    qry.Filtered := True;
+    if cdsOprASA = nil then
+      cdsOprASA := TClientDataSet.Create(Application);
+    with cdsOprASA do
+    begin
+      FieldDefs.Clear;
+      FieldDefs.Add('CODE',qry.FieldByName('LINE_CODE').DataType,qry.FieldByName('LINE_CODE').Size);
+      FieldDefs.Add('NAME',qry.FieldByName('LINE_NAME').DataType,qry.FieldByName('LINE_NAME').Size);
+      CreateDataSet;
+      Open;
+      qry.First;
+      while not qry.Eof do
+      begin
+        Append;
+        FieldByName('CODE').AsString := qry.FieldByName('LINE_CODE').AsString;
+        FieldByName('NAME').AsString := qry.FieldByName('LINE_NAME').AsString;
+        Post;
+        qry.Next;
+      end;
+    end;
   finally
     qry.Free;
   end;
@@ -94,12 +119,18 @@ begin
     begin
       vSql := 'SELECT * FROM V_COMMON_TABLE_DATA WHERE TABLE_HEAD_CODE = '+ QuotedStr(ADataType) +' ORDER BY TABLE_HEAD_ID,DISPLAY_ORDER';
       cds := cdsOprCutWound;
+    end
+    else if ADataType = 'ASA' then
+    begin
+      vSql := 'SELECT * FROM V_COMMON_TABLE_DATA WHERE TABLE_HEAD_CODE = '+ QuotedStr(ADataType) +' ORDER BY TABLE_HEAD_ID,DISPLAY_ORDER';
+      cds := cdsOprASA;
     end;
+
     cds.EmptyDataSet;
     qry.SQL.Text := vSql;
     qry.Open;
     qry.First;
-    if ADataType = 'OPER_CUT_WOUND' then
+    if (ADataType = 'OPER_CUT_WOUND') or(ADataType = 'ASA') then
     begin
       while not qry.Eof do
       begin
