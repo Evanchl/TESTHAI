@@ -31,8 +31,8 @@ object frmFindData: TfrmFindData
     object cxGrid1DBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       FindPanel.DisplayMode = fpdmAlways
+      OnCellClick = cxGrid1DBTableView1CellClick
       OnCellDblClick = cxGrid1DBTableView1CellDblClick
-      DataController.DataSource = dsData
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
@@ -124,8 +124,8 @@ object frmFindData: TfrmFindData
   end
   object dsData: TDataSource
     DataSet = qryData
-    Left = 244
-    Top = 186
+    Left = 236
+    Top = 178
   end
   object cxStyleRepository1: TcxStyleRepository
     Left = 176
@@ -167,5 +167,11 @@ object frmFindData: TfrmFindData
       AssignedValues = [svColor]
       Color = clWhite
     end
+  end
+  object dsData1: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 328
+    Top = 184
   end
 end

@@ -18,6 +18,10 @@ uses Classes,DB,DBClient,ADODB,cxGridCustomView, cxGridCustomTableView,cxGridDBT
   procedure CreateBaseDataCache;
   //重新某个基础数据缓存
   procedure CreateDataDataCacheByDateType(const ADataType: string);
+  //根据DataSet创建ClientDataSet数据集字段
+  procedure CreateCDSColumnByDataSet(Acds: TClientDataSet; ADataSet: TDataSet; ACreateSelectedField: Boolean = False);
+  //把DataSet数据复制到ClientDataSet数据集
+  procedure CdsCopyDataFromDataSet(Acds: TClientDataSet; ADataSet: TDataSet; ACreateSelectedField: Boolean = False);
 
 var
   cdsOprCutWound: TClientDataSet; //手术切口数据集
@@ -143,6 +147,58 @@ begin
     end;
   finally
     qry.Free;
+  end;
+
+end;
+
+procedure CreateCDSColumnByDataSet(Acds: TClientDataSet; ADataSet: TDataSet; ACreateSelectedField: Boolean = False);
+var
+  i: Integer;
+begin
+  with Acds do
+  begin
+    if Acds.Active then
+      Acds.Close;
+    FieldDefs.Clear;
+    if ACreateSelectedField then
+      FieldDefs.Add('SELECT_FLAG',ftBoolean);
+    for I := 0 to ADataSet.FieldCount -1 do
+      FieldDefs.Add(ADataSet.Fields[i].FieldName,ADataSet.Fields[i].DataType,ADataSet.Fields[i].Size);
+    CreateDataSet;
+  end;
+end;
+
+procedure CdsCopyDataFromDataSet(Acds: TClientDataSet; ADataSet: TDataSet; ACreateSelectedField: Boolean = False);
+var
+  i: Integer;
+begin
+  with Acds do
+  begin
+    DisableControls;
+    try
+      ADataSet.First;
+      while not ADataSet.Eof do
+      begin
+        Append;
+        if ACreateSelectedField then
+        begin
+          Fields[0].AsBoolean := False;
+          for i := 1 to FieldCount -1 do
+            Fields[i].Value := ADataSet.FieldByName(Fields[i].FieldName).Value;
+        end
+        else
+        begin
+          for i := 0 to FieldCount -1 do
+            Fields[i].Value := ADataSet.FieldByName(Fields[i].FieldName).Value;
+        end;
+        ADataSet.Next;
+      end;
+      if State in dsEditModes then Post;
+      MergeChangeLog;
+      Acds.First;
+    finally
+      EnableControls;
+    end;
   end;
 
 end;
