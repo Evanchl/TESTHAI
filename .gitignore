@@ -14,6 +14,12 @@ Login/Win32/*
 PatientInfo/__history/*
 PatientInfo/__recovery/*
 PatientInfo/Win32/*
+Test/__history/*
+Test/__recovery/*
+Test/Win32/*
+Main/__history/*
+Main/__recovery/*
+Main/Win32/*
 *.local
 *.identcache
 *.skincfg

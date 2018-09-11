@@ -4,9 +4,9 @@ uses
   Vcl.Forms,
   Winapi.ActiveX,
   ufrmLogin,
-  ufrmMain in '..\ufrmMain.pas' {frmMain},
-  ufrmSearchPatList in '..\ufrmSearchPatList.pas' {frmSearchPatList},
-  uLoadDll in '..\uLoadDll.pas';
+  ufrmMain in 'ufrmMain.pas' {frmMain},
+  ufrmSearchPatList in 'ufrmSearchPatList.pas' {frmSearchPatList},
+  uLoadDll in 'uLoadDll.pas';
 
 {$R *.res}
 

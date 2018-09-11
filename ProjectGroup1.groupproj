@@ -3,28 +3,28 @@
         <ProjectGuid>{8062CC78-C431-4A2E-8CEB-1017135604A6}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="HAIMIS.dproj">
+        <Projects Include="Main\HAIMIS.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="PatientInfo.dproj">
+        <Projects Include="PatientInfo\PatientInfo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="HMKJ_DBConn.dproj">
+        <Projects Include="DataConn\HMKJ_DBConn.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="HMKJ_Comm.dproj">
+        <Projects Include="Common\HMKJ_Comm.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="HMKJ_DES.dproj">
+        <Projects Include="DES\HMKJ_DES.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Login.dproj">
+        <Projects Include="Login\Login.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="InfectReport.dproj">
+        <Projects Include="InfectReport\InfectReport.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Project1.dproj">
+        <Projects Include="Test\Project1.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -36,76 +36,76 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="HAIMIS">
-        <MSBuild Projects="HAIMIS.dproj"/>
+        <MSBuild Projects="Main\HAIMIS.dproj"/>
     </Target>
     <Target Name="HAIMIS:Clean">
-        <MSBuild Projects="HAIMIS.dproj" Targets="Clean"/>
+        <MSBuild Projects="Main\HAIMIS.dproj" Targets="Clean"/>
     </Target>
     <Target Name="HAIMIS:Make">
-        <MSBuild Projects="HAIMIS.dproj" Targets="Make"/>
+        <MSBuild Projects="Main\HAIMIS.dproj" Targets="Make"/>
     </Target>
     <Target Name="PatientInfo">
-        <MSBuild Projects="PatientInfo.dproj"/>
+        <MSBuild Projects="PatientInfo\PatientInfo.dproj"/>
     </Target>
     <Target Name="PatientInfo:Clean">
-        <MSBuild Projects="PatientInfo.dproj" Targets="Clean"/>
+        <MSBuild Projects="PatientInfo\PatientInfo.dproj" Targets="Clean"/>
     </Target>
     <Target Name="PatientInfo:Make">
-        <MSBuild Projects="PatientInfo.dproj" Targets="Make"/>
+        <MSBuild Projects="PatientInfo\PatientInfo.dproj" Targets="Make"/>
     </Target>
     <Target Name="HMKJ_DBConn">
-        <MSBuild Projects="HMKJ_DBConn.dproj"/>
+        <MSBuild Projects="DataConn\HMKJ_DBConn.dproj"/>
     </Target>
     <Target Name="HMKJ_DBConn:Clean">
-        <MSBuild Projects="HMKJ_DBConn.dproj" Targets="Clean"/>
+        <MSBuild Projects="DataConn\HMKJ_DBConn.dproj" Targets="Clean"/>
     </Target>
     <Target Name="HMKJ_DBConn:Make">
-        <MSBuild Projects="HMKJ_DBConn.dproj" Targets="Make"/>
+        <MSBuild Projects="DataConn\HMKJ_DBConn.dproj" Targets="Make"/>
     </Target>
     <Target Name="HMKJ_Comm">
-        <MSBuild Projects="HMKJ_Comm.dproj"/>
+        <MSBuild Projects="Common\HMKJ_Comm.dproj"/>
     </Target>
     <Target Name="HMKJ_Comm:Clean">
-        <MSBuild Projects="HMKJ_Comm.dproj" Targets="Clean"/>
+        <MSBuild Projects="Common\HMKJ_Comm.dproj" Targets="Clean"/>
     </Target>
     <Target Name="HMKJ_Comm:Make">
-        <MSBuild Projects="HMKJ_Comm.dproj" Targets="Make"/>
+        <MSBuild Projects="Common\HMKJ_Comm.dproj" Targets="Make"/>
     </Target>
     <Target Name="HMKJ_DES">
-        <MSBuild Projects="HMKJ_DES.dproj"/>
+        <MSBuild Projects="DES\HMKJ_DES.dproj"/>
     </Target>
     <Target Name="HMKJ_DES:Clean">
-        <MSBuild Projects="HMKJ_DES.dproj" Targets="Clean"/>
+        <MSBuild Projects="DES\HMKJ_DES.dproj" Targets="Clean"/>
     </Target>
     <Target Name="HMKJ_DES:Make">
-        <MSBuild Projects="HMKJ_DES.dproj" Targets="Make"/>
+        <MSBuild Projects="DES\HMKJ_DES.dproj" Targets="Make"/>
     </Target>
     <Target Name="Login">
-        <MSBuild Projects="Login.dproj"/>
+        <MSBuild Projects="Login\Login.dproj"/>
     </Target>
     <Target Name="Login:Clean">
-        <MSBuild Projects="Login.dproj" Targets="Clean"/>
+        <MSBuild Projects="Login\Login.dproj" Targets="Clean"/>
     </Target>
     <Target Name="Login:Make">
-        <MSBuild Projects="Login.dproj" Targets="Make"/>
+        <MSBuild Projects="Login\Login.dproj" Targets="Make"/>
     </Target>
     <Target Name="InfectReport">
-        <MSBuild Projects="InfectReport.dproj"/>
+        <MSBuild Projects="InfectReport\InfectReport.dproj"/>
     </Target>
     <Target Name="InfectReport:Clean">
-        <MSBuild Projects="InfectReport.dproj" Targets="Clean"/>
+        <MSBuild Projects="InfectReport\InfectReport.dproj" Targets="Clean"/>
     </Target>
     <Target Name="InfectReport:Make">
-        <MSBuild Projects="InfectReport.dproj" Targets="Make"/>
+        <MSBuild Projects="InfectReport\InfectReport.dproj" Targets="Make"/>
     </Target>
     <Target Name="Project1">
-        <MSBuild Projects="Project1.dproj"/>
+        <MSBuild Projects="Test\Project1.dproj"/>
     </Target>
     <Target Name="Project1:Clean">
-        <MSBuild Projects="Project1.dproj" Targets="Clean"/>
+        <MSBuild Projects="Test\Project1.dproj" Targets="Clean"/>
     </Target>
     <Target Name="Project1:Make">
-        <MSBuild Projects="Project1.dproj" Targets="Make"/>
+        <MSBuild Projects="Test\Project1.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="HAIMIS;PatientInfo;HMKJ_DBConn;HMKJ_Comm;HMKJ_DES;Login;InfectReport;Project1"/>
