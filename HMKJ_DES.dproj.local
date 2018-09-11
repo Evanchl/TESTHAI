@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Transactions>
-    <Transaction>1899-12-30 00:00:00.000.326,=E:\HAIMIS\DES\uDES.pas</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.837,=rtl.dcp</Transaction>
-    <Transaction>1899-12-30 00:00:00.000.825,C:\Users\chhli\Documents\Embarcadero\Studio\Projects\Package1.dproj=E:\HAIMIS\HMKJ_DES.dproj</Transaction>
-  </Transactions>
-</BorlandProject>

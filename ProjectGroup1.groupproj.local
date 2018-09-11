@@ -4,6 +4,6 @@
     <Transaction>1899-12-30 00:00:00.000.874,C:\Users\chhli\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj=E:\NIMIS\ProjectGroup1.groupproj</Transaction>
   </Transactions>
 	<Default.Personality>
-		<Projects ActiveProject="E:\HAIMIS\HAIMIS.dproj"/>
+		<Projects ActiveProject="E:\HAIMIS\TESTHAI\Project1.dproj"/>
 	</Default.Personality>
 </BorlandProject>

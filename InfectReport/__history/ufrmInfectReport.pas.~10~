@@ -1,0 +1,45 @@
+{*******************************************************}
+{                                                       }
+{       版权所有 (C) 2018 恒明科技                      }
+{                                                       }
+{       Author: EvanChen 2018-09-05 21:31:29            }
+{*******************************************************}
+
+unit ufrmInfectReport;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,ufrmBase, System.ImageList, Vcl.ImgList,
+  RzButton, Vcl.ExtCtrls, RzPanel;
+
+type
+  TfrmInfectReport = class(TfrmBase)
+    ilToolBar: TImageList;
+    tbrMain: TRzToolbar;
+    btnFrames: TRzToolButton;
+    btnComboBoxes: TRzToolButton;
+    btnListBoxes: TRzToolButton;
+    btnCommon: TRzToolButton;
+    btnEdits: TRzToolButton;
+    btnButtons: TRzToolButton;
+    btnWidgets: TRzToolButton;
+    btnDatabase: TRzToolButton;
+    btnShell: TRzToolButton;
+    btnLauncher: TRzToolButton;
+    btnSendMsg: TRzToolButton;
+    btnDisplay: TRzToolButton;
+    btnTabs: TRzToolButton;
+    btnWelcome: TRzToolButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+{$R *.dfm}
+
+end.

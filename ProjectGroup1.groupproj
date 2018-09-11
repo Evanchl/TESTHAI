@@ -21,6 +21,12 @@
         <Projects Include="Login.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="InfectReport.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Project1.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -83,14 +89,32 @@
     <Target Name="Login:Make">
         <MSBuild Projects="Login.dproj" Targets="Make"/>
     </Target>
+    <Target Name="InfectReport">
+        <MSBuild Projects="InfectReport.dproj"/>
+    </Target>
+    <Target Name="InfectReport:Clean">
+        <MSBuild Projects="InfectReport.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="InfectReport:Make">
+        <MSBuild Projects="InfectReport.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project1">
+        <MSBuild Projects="Project1.dproj"/>
+    </Target>
+    <Target Name="Project1:Clean">
+        <MSBuild Projects="Project1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project1:Make">
+        <MSBuild Projects="Project1.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="HAIMIS;PatientInfo;HMKJ_DBConn;HMKJ_Comm;HMKJ_DES;Login"/>
+        <CallTarget Targets="HAIMIS;PatientInfo;HMKJ_DBConn;HMKJ_Comm;HMKJ_DES;Login;InfectReport;Project1"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="HAIMIS:Clean;PatientInfo:Clean;HMKJ_DBConn:Clean;HMKJ_Comm:Clean;HMKJ_DES:Clean;Login:Clean"/>
+        <CallTarget Targets="HAIMIS:Clean;PatientInfo:Clean;HMKJ_DBConn:Clean;HMKJ_Comm:Clean;HMKJ_DES:Clean;Login:Clean;InfectReport:Clean;Project1:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="HAIMIS:Make;PatientInfo:Make;HMKJ_DBConn:Make;HMKJ_Comm:Make;HMKJ_DES:Make;Login:Make"/>
+        <CallTarget Targets="HAIMIS:Make;PatientInfo:Make;HMKJ_DBConn:Make;HMKJ_Comm:Make;HMKJ_DES:Make;Login:Make;InfectReport:Make;Project1:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

@@ -1,0 +1,109 @@
+package HMKJ_Comm;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  dbrtl,
+  adortl,
+  RaizeComponentsVcl240,
+  HMKJ_DBConn,
+  vclimg,
+  vcldb,
+  dxCoreRS24,
+  cxLibraryRS24,
+  dxGDIPlusRS24,
+  dxThemeRS24,
+  cxDataRS24,
+  cxEditorsRS24,
+  cxPageControlRS24,
+  dxLayoutControlRS24,
+  cxGridRS24,
+  dxSkinsCoreRS24,
+  dxSkinscxPCPainterRS24,
+  dxSkinBlackRS24,
+  dxSkinBlueprintRS24,
+  dxSkinBlueRS24,
+  dxSkinCaramelRS24,
+  dxSkinCoffeeRS24,
+  dxSkinDarkRoomRS24,
+  dxSkinDarkSideRS24,
+  dxSkinDevExpressDarkStyleRS24,
+  dxSkinDevExpressStyleRS24,
+  dxSkinFoggyRS24,
+  dxSkinGlassOceansRS24,
+  dxSkinHighContrastRS24,
+  dxSkiniMaginaryRS24,
+  dxSkinLilianRS24,
+  dxSkinLiquidSkyRS24,
+  dxSkinLondonLiquidSkyRS24,
+  dxSkinMcSkinRS24,
+  dxSkinMetropolisDarkRS24,
+  dxSkinMetropolisRS24,
+  dxSkinMoneyTwinsRS24,
+  dxSkinOffice2007BlackRS24,
+  dxSkinOffice2007BlueRS24,
+  dxSkinOffice2007GreenRS24,
+  dxSkinOffice2007PinkRS24,
+  dxSkinOffice2007SilverRS24,
+  dxSkinOffice2010BlackRS24,
+  dxSkinOffice2010BlueRS24,
+  dxSkinOffice2010SilverRS24,
+  dxSkinOffice2013DarkGrayRS24,
+  dxSkinOffice2013LightGrayRS24,
+  dxSkinOffice2013WhiteRS24,
+  dxSkinPumpkinRS24,
+  dxSkinSevenClassicRS24,
+  dxSkinSevenRS24,
+  dxSkinSharpPlusRS24,
+  dxSkinSharpRS24,
+  dxSkinSilverRS24,
+  dxSkinSpringTimeRS24,
+  dxSkinStardustRS24,
+  dxSkinSummer2008RS24,
+  dxSkinTheAsphaltWorldRS24,
+  dxSkinValentineRS24,
+  dxSkinVS2010RS24,
+  dxSkinWhiteprintRS24,
+  dxSkinXmas2008BlueRS24,
+  dxSkinOffice2016ColorfulRS24,
+  dxSkinOffice2016DarkRS24,
+  dxSkinVisualStudio2013BlueRS24,
+  dxSkinVisualStudio2013DarkRS24,
+  dxSkinVisualStudio2013LightRS24,
+  dsnap;
+
+contains
+  ufrmBase in 'ufrmBase.pas' {frmBase},
+  uUser in 'uUser.pas',
+  uComm in 'uComm.pas',
+  ufrmFindData in 'ufrmFindData.pas' {frmFindData};
+
+end.

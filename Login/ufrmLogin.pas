@@ -12,7 +12,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, RzButton, Vcl.StdCtrls, RzLabel,uDM,uDES,
-  Vcl.Mask, RzEdit,ADODB, cxClasses, dxServerModeData, dxServerModeADODataSource,ufrmBase;
+  Vcl.Mask, RzEdit,ADODB, cxClasses, dxServerModeData, dxServerModeADODataSource,ufrmBase,uComm;
 
 type
   TfrmLogin = class(TfrmBase)
@@ -88,6 +88,9 @@ begin
   finally
     vQry.Free;
   end;
+  //登录成功加载基础数据
+  CreateBaseDataCache;
+  //加载用户权限
   ModalResult := mrOk;
 end;
 
