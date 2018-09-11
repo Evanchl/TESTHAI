@@ -9,7 +9,7 @@ unit uComm;
 
 interface
 uses Classes,DB,DBClient,ADODB,cxGridCustomView, cxGridCustomTableView,cxGridDBTableView,uDM,Forms,System.SysUtils,
-  MidasLib;
+  MidasLib,StdCtrls,RzCmboBx;
   //设置字段内容显示位置
   procedure SetDataSetFieldPosition(ADataSet: TDataSet; AAlignment: TAlignment = taLeftJustify);
   //创建列字段
@@ -22,6 +22,11 @@ uses Classes,DB,DBClient,ADODB,cxGridCustomView, cxGridCustomTableView,cxGridDBT
   procedure CreateCDSColumnByDataSet(Acds: TClientDataSet; ADataSet: TDataSet; ACreateSelectedField: Boolean = False);
   //把DataSet数据复制到ClientDataSet数据集
   procedure CdsCopyDataFromDataSet(Acds: TClientDataSet; ADataSet: TDataSet; ACreateSelectedField: Boolean = False);
+  //把数据集数据初始化到Combobox里面
+  procedure InitComboBoxItems(AComboBox: TCustomComboBox; ADataSet: TDataSet; AItemField: string; AddBlankRow: Boolean = True);
+  //把数据集数据初始化到带valuesComboBox里面
+  procedure InitComboBoxItemAndValues(AComboBox: TRzComboBox; ADataSet: TDataSet; AItemField,AValueField: string; AddBlankRow: Boolean = True);
+
 
 var
   cdsOprCutWound: TClientDataSet; //手术切口数据集
@@ -201,6 +206,37 @@ begin
     end;
   end;
 
+end;
+
+procedure InitComboBoxItems(AComboBox: TCustomComboBox; ADataSet: TDataSet; AItemField: string; AddBlankRow: Boolean = True);
+begin
+  AComboBox.Items.Clear;
+  if AddBlankRow then
+    AComboBox.Items.Add('');
+  ADataSet.First;
+  while not ADataSet.Eof do
+  begin
+    AComboBox.Items.Add(ADataSet.FieldByName(AItemField).AsString);
+    ADataSet.Next;
+  end;
+end;
+
+procedure InitComboBoxItemAndValues(AComboBox: TRzComboBox; ADataSet: TDataSet; AItemField,AValueField: string; AddBlankRow: Boolean = True);
+begin
+  AComboBox.Items.Clear;
+  AComboBox.Values.Clear;
+  if AddBlankRow then
+  begin
+    AComboBox.Items.Add('');
+    AComboBox.Values.Add('');
+  end;
+  ADataSet.First;
+  while not ADataSet.Eof do
+  begin
+    AComboBox.Items.Add(ADataSet.FieldByName(AItemField).AsString);
+    AComboBox.Values.Add(ADataSet.FieldByName(AValueField).AsString);
+    ADataSet.Next;
+  end;
 end;
 
 end.
