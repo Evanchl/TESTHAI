@@ -412,6 +412,8 @@ var
   vTabSheet: TRzTabSheet;
 begin
   vTabSheet := TRzPageControl(Sender).ActivePage;
+  //Ê×Ò³²»¹Ø±Õ
+  if vTabSheet.Name = 'tsHome' then Exit;
   vTabSheet.Free;
 end;
 

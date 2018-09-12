@@ -21,7 +21,7 @@ object frmHome: TfrmHome
     Width = 848
     Height = 489
     Align = alClient
-    BevelOuter = bvLowered
+    BevelOuter = bvNone
     BevelWidth = 6
     Color = clWhite
     Ctl3D = False
@@ -39,23 +39,25 @@ object frmHome: TfrmHome
     ExplicitWidth = 768
     ExplicitHeight = 442
     object pnl4: TPanel
-      Left = 6
-      Top = 6
-      Width = 836
+      Left = 0
+      Top = 0
+      Width = 848
       Height = 32
       Align = alTop
       BevelOuter = bvNone
       Color = clWindow
       ParentBackground = False
       TabOrder = 0
+      ExplicitLeft = 6
+      ExplicitTop = 6
       ExplicitWidth = 756
       DesignSize = (
-        836
+        848
         32)
       object shp1: TShape
         Left = 3
         Top = 3
-        Width = 832
+        Width = 844
         Height = 26
         Anchors = [akLeft, akTop, akRight]
         Brush.Color = 15527148
@@ -64,7 +66,7 @@ object frmHome: TfrmHome
         ExplicitWidth = 837
       end
       object RzShapeButton1: TRzShapeButton
-        Left = 790
+        Left = 802
         Top = 6
         Width = 41
         Height = 20
@@ -80,7 +82,7 @@ object frmHome: TfrmHome
         ExplicitLeft = 795
       end
       object img1: TImage
-        Left = 775
+        Left = 787
         Top = 9
         Width = 16
         Height = 16
@@ -161,9 +163,9 @@ object frmHome: TfrmHome
       Width = 121
     end
     object pnl8: TPanel
-      Left = 6
-      Top = 38
-      Width = 836
+      Left = 0
+      Top = 32
+      Width = 848
       Height = 337
       Align = alTop
       BevelEdges = []
@@ -171,6 +173,8 @@ object frmHome: TfrmHome
       BevelWidth = 6
       Caption = 'pnl8'
       TabOrder = 3
+      ExplicitLeft = 6
+      ExplicitTop = 38
       ExplicitWidth = 756
       object pnl5: TPanel
         Left = 0
@@ -297,7 +301,7 @@ object frmHome: TfrmHome
         end
       end
       object pnl9: TPanel
-        Left = 546
+        Left = 558
         Top = 0
         Width = 290
         Height = 337
@@ -370,7 +374,7 @@ object frmHome: TfrmHome
         end
       end
       object pnl10: TPanel
-        Left = 266
+        Left = 278
         Top = 0
         Width = 280
         Height = 337
@@ -435,21 +439,23 @@ object frmHome: TfrmHome
       end
     end
     object pnl11: TPanel
-      Left = 6
-      Top = 375
-      Width = 836
-      Height = 108
+      Left = 0
+      Top = 369
+      Width = 848
+      Height = 120
       Align = alClient
       BevelOuter = bvNone
       BevelWidth = 6
       TabOrder = 4
+      ExplicitLeft = 6
+      ExplicitTop = 375
       ExplicitWidth = 756
       ExplicitHeight = 61
       object pnl12: TPanel
         Left = 0
         Top = 0
         Width = 473
-        Height = 108
+        Height = 120
         Align = alLeft
         BevelEdges = []
         BevelOuter = bvNone
@@ -460,7 +466,7 @@ object frmHome: TfrmHome
           Left = 0
           Top = 0
           Width = 473
-          Height = 108
+          Height = 120
           Align = alClient
           BevelInner = bvNone
           BevelOuter = bvNone
@@ -524,8 +530,8 @@ object frmHome: TfrmHome
       object pnl13: TPanel
         Left = 473
         Top = 0
-        Width = 363
-        Height = 108
+        Width = 375
+        Height = 120
         Align = alClient
         BevelEdges = []
         BevelOuter = bvNone
@@ -536,8 +542,8 @@ object frmHome: TfrmHome
         object cht5: TChart
           Left = 0
           Top = 0
-          Width = 363
-          Height = 108
+          Width = 375
+          Height = 120
           BackWall.Pen.Visible = False
           Border.Visible = True
           BottomWall.Brush.Gradient.EndColor = clSilver
