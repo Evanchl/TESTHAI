@@ -5,7 +5,8 @@ uses
   Winapi.ActiveX,
   ufrmLogin,
   ufrmMain in 'ufrmMain.pas' {frmMain},
-  uLoadDll in 'uLoadDll.pas';
+  uLoadDll in 'uLoadDll.pas',
+  ufrmHome in 'ufrmHome.pas' {frmHome};
 
 {$R *.res}
 
@@ -16,5 +17,6 @@ begin
   if not UserLoin then
     Application.Terminate;
   Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TfrmHome, frmHome);
   Application.Run;
 end.

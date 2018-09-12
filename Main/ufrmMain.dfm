@@ -419,7 +419,7 @@ object frmMain: TfrmMain
       end
     end
   end
-  object pnlGroupBar: TRzSizePanel
+  object pnlNavigate: TRzSizePanel
     Left = 0
     Top = 77
     Width = 187
@@ -434,210 +434,237 @@ object frmMain: TfrmMain
     SizeBarWidth = 7
     TabOrder = 1
     VisualStyle = vsGradient
-    object RzGroupBar1: TRzGroupBar
+    object dxNavBar1: TdxNavBar
+      Left = 0
+      Top = 128
+      Width = 179
+      Height = 194
+      Align = alClient
+      Ctl3D = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ActiveGroupIndex = 0
+      TabOrder = 0
+      LookAndFeel.Kind = lfUltraFlat
+      LookAndFeel.NativeStyle = False
+      View = 19
+      object dxNavBar1Group1: TdxNavBarGroup
+        Caption = #39044#35686#31649#29702
+        LargeImageIndex = 0
+        SelectedLinkIndex = -1
+        SmallImageIndex = 0
+        TopVisibleLinkIndex = 0
+        Links = <
+          item
+            Item = dxNavBar1Item1
+          end
+          item
+            Item = dxNavBar1Item2
+          end
+          item
+            Item = dxNavBar1Item3
+          end
+          item
+            Item = dxNavBar1Item4
+          end
+          item
+            Item = dxNavBar1Item5
+          end>
+      end
+      object dxNavBar1Group2: TdxNavBarGroup
+        Caption = #24863#26579#19978#25253
+        LargeImageIndex = 7
+        SelectedLinkIndex = -1
+        SmallImageIndex = 4
+        TopVisibleLinkIndex = 0
+        Links = <
+          item
+            Item = dxNavBar1Item6
+          end>
+      end
+      object dxNavBar1Group3: TdxNavBarGroup
+        Caption = #30446#26631#24615#30417#27979
+        LargeImageIndex = 6
+        SelectedLinkIndex = -1
+        SmallImageIndex = 6
+        TopVisibleLinkIndex = 0
+        Links = <
+          item
+            Item = dxNavBar1Item7
+          end
+          item
+            Item = dxNavBar1Item8
+          end
+          item
+            Item = dxNavBar1Item9
+          end>
+      end
+      object dxNavBar1Group4: TdxNavBarGroup
+        Caption = #32508#21512#24615#30417#27979
+        LargeImageIndex = 4
+        SelectedLinkIndex = -1
+        SmallImageIndex = 7
+        TopVisibleLinkIndex = 0
+        Links = <>
+      end
+      object dxNavBar1Group5: TdxNavBarGroup
+        Caption = #25253#34920#20013#24515
+        LargeImageIndex = 2
+        SelectedLinkIndex = -1
+        SmallImageIndex = 2
+        TopVisibleLinkIndex = 0
+        Links = <>
+      end
+      object dxNavBar1Item1: TdxNavBarItem
+        Caption = #30149#20363#39044#35686
+        LargeImageIndex = 5
+        SmallImageIndex = 5
+      end
+      object dxNavBar1Item2: TdxNavBarItem
+        Caption = #26292#21457#39044#35686
+      end
+      object dxNavBar1Item3: TdxNavBarItem
+        Caption = #36235#21183#39044#35686
+      end
+      object dxNavBar1Item4: TdxNavBarItem
+        Caption = #25239#33740#33647#29289#39044#35686
+      end
+      object dxNavBar1Item5: TdxNavBarItem
+        Caption = #22810#37325#32784#33647#33740#39044#35686
+      end
+      object dxNavBar1Item6: TdxNavBarItem
+        Caption = #38498#20869#24863#26579#19978#25253#26597#35810
+      end
+      object dxNavBar1Item7: TdxNavBarItem
+        Caption = #22806#31185#25163#26415#24863#26579#30417#27979
+      end
+      object dxNavBar1Item8: TdxNavBarItem
+        Caption = #37325#28857#31185#23460#24863#26579#30417#27979
+      end
+      object dxNavBar1Item9: TdxNavBarItem
+        Caption = #26032#29983#20799#24863#26579#30417#27979
+      end
+    end
+    object RzButton1: TRzButton
+      Left = 0
+      Top = 322
+      Width = 179
+      Height = 32
+      FrameColor = 13414214
+      Align = alBottom
+      Caption = #24110#21161
+      Color = 16183792
+      HighlightColor = clRed
+      HotTrack = True
+      TextShadowDepth = 1
+      TabOrder = 1
+      ThemeAware = False
+      Visible = False
+      ExplicitLeft = 6
+      ExplicitTop = 429
+      ExplicitWidth = 172
+    end
+    object RzButton2: TRzButton
+      Left = 0
+      Top = 354
+      Width = 179
+      Height = 32
+      FrameColor = 13414214
+      Align = alBottom
+      Caption = #31995#32479#35774#32622
+      Color = 16183792
+      HighlightColor = clRed
+      HotTrack = True
+      TextShadowDepth = 1
+      TabOrder = 2
+      ThemeAware = False
+      Visible = False
+      ExplicitLeft = 6
+      ExplicitTop = 397
+      ExplicitWidth = 172
+    end
+    object RzButton3: TRzButton
       Left = 0
       Top = 0
       Width = 179
-      Height = 386
-      GradientColorStart = clBtnFace
-      GradientColorStop = clBtnShadow
-      GroupBorderSize = 8
-      Align = alClient
-      Color = clBtnShadow
-      ParentColor = False
-      TabOrder = 0
-      object grpVclStyles: TRzGroup
-        Items = <>
-        Opened = True
-        DividerVisible = False
-        Caption = 'VCL Styles'
-        ParentColor = False
-        Visible = False
-        object cbxVclStyles: TRzComboBox
-          AlignWithMargins = True
-          Left = 5
-          Top = 24
-          Width = 136
-          Height = 21
-          Margins.Left = 4
-          Margins.Top = 4
-          Margins.Right = 4
-          Margins.Bottom = 4
-          Align = alClient
-          Style = csDropDownList
-          TabOrder = 0
-        end
-      end
-      object grpDemos: TRzGroup
-        CaptionColorStop = 11855600
-        CaptionImageIndex = 0
-        CaptionStyle = csLarge
-        Items = <
-          item
-            Action = actWelcome
-            Selected = True
-          end
-          item
-            Caption = '-'
-          end
-          item
-            Action = actCustomFraming
-          end
-          item
-            Action = actTabs
-          end
-          item
-            Action = actEdits
-          end
-          item
-            Action = actComboBoxes
-          end
-          item
-            Action = actListBoxes
-          end
-          item
-            Action = actCommonControls
-          end
-          item
-            Action = actButtons
-          end
-          item
-            Action = actDisplay
-          end
-          item
-            Action = actDatabase
-          end
-          item
-            Action = actWidgets
-          end
-          item
-            Action = actShell
-          end
-          item
-            Action = actLauncher
-          end
-          item
-            Action = actSendMessages
-          end>
-        Opened = True
-        OpenedHeight = 327
-        DividerVisible = False
-        ShowItemSelection = True
-        Caption = 'Demos'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Verdana'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-      end
-      object grpVisualStyles: TRzGroup
-        CaptionColorStop = 11855600
-        Items = <
-          item
-            Caption = 'Classic'
-            ImageIndex = 0
-            Tag = 1
-          end
-          item
-            Caption = 'Win XP'
-            ImageIndex = 1
-            Tag = 2
-          end
-          item
-            Caption = 'Gradient'
-            ImageIndex = 2
-          end
-          item
-            Caption = 'System'
-            ImageIndex = 3
-            IndentLevel = 1
-            Selected = True
-            Tag = 3
-          end
-          item
-            Caption = 'MSOffice'
-            ImageIndex = 4
-            IndentLevel = 1
-            Tag = 4
-          end
-          item
-            Caption = 'Custom'
-            ImageIndex = 5
-            IndentLevel = 1
-            Tag = 5
-          end>
-        Opened = True
-        OpenedHeight = 147
-        DividerVisible = False
-        ShowItemSelection = True
-        Caption = 'Visual Styles'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Verdana'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-      end
-      object grpGroupBarStyles: TRzGroup
-        CaptionColorStop = 11855600
-        Items = <
-          item
-            Caption = 'gbsCategoryView'
-            ImageIndex = 9
-          end
-          item
-            Caption = 'gbsTaskList'
-            ImageIndex = 13
-          end
-          item
-            Caption = 'gbsOutlook'
-            ImageIndex = 11
-          end>
-        Opened = False
-        OpenedHeight = 87
-        DividerVisible = False
-        Caption = 'GroupBar Styles'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Verdana'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-      end
-      object grpToolbar: TRzGroup
-        CaptionColorStop = 11855600
-        Items = <
-          item
-            Action = actToolbarCustomize
-          end
-          item
-            Caption = 'Show Text Labels'
-            ImageIndex = 22
-          end
-          item
-            Caption = 'No Text Labels'
-            ImageIndex = 26
-          end
-          item
-            Caption = 'Selective Text on Right'
-            ImageIndex = 24
-          end>
-        Opened = False
-        OpenedHeight = 120
-        DividerVisible = False
-        Caption = 'Toolbar Settings'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Verdana'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-      end
+      Height = 32
+      FrameColor = 13414214
+      Align = alTop
+      Caption = #25253#34920#20013#24515
+      Color = 16183792
+      HighlightColor = clRed
+      HotTrack = True
+      TabOrder = 3
+      ThemeAware = False
+      Visible = False
+      ExplicitTop = 8
+    end
+    object RzButton4: TRzButton
+      Left = 0
+      Top = 64
+      Width = 179
+      Height = 32
+      FrameColor = 13414214
+      Align = alTop
+      Caption = #24863#26579#19978#25253
+      Color = 16183792
+      HighlightColor = clRed
+      HotTrack = True
+      TabOrder = 4
+      ThemeAware = False
+      Visible = False
+      ExplicitLeft = 6
+      ExplicitTop = 70
+      ExplicitWidth = 172
+    end
+    object RzButton5: TRzButton
+      Left = 0
+      Top = 96
+      Width = 179
+      Height = 32
+      FrameColor = 13414214
+      Align = alTop
+      Caption = #30149#20363#39044#35686
+      Color = 16183792
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      HighlightColor = clRed
+      HotTrack = True
+      ParentFont = False
+      TabOrder = 5
+      ThemeAware = False
+      Visible = False
+      ExplicitLeft = 6
+      ExplicitTop = 38
+      ExplicitWidth = 172
+    end
+    object RzButton6: TRzButton
+      Left = 0
+      Top = 32
+      Width = 179
+      Height = 32
+      FrameColor = 5258242
+      Align = alTop
+      Color = 5258242
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindow
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      HighlightColor = clRed
+      HotTrack = True
+      ParentFont = False
+      TabOrder = 6
+      ThemeAware = False
+      ExplicitLeft = 6
+      ExplicitTop = 6
+      ExplicitWidth = 172
     end
   end
   object sbrMain: TRzStatusBar
@@ -739,8 +766,8 @@ object frmMain: TfrmMain
       Width = 678
       Height = 386
       Hint = ''
-      ActivePage = RzTabSheet1
-      ActivePageDefault = RzTabSheet1
+      ActivePage = tsHome
+      ActivePageDefault = tsHome
       Align = alClient
       AllowTabDragging = True
       Color = 16119543
@@ -763,43 +790,10 @@ object frmMain: TfrmMain
       Transparent = True
       OnClose = pgcPreviewClose
       FixedDimension = 23
-      object RzTabSheet1: TRzTabSheet
+      object tsHome: TRzTabSheet
         Color = 16119543
         ImageIndex = 1
-        Caption = #39318#39029
-      end
-      object RzTabSheet2: TRzTabSheet
-        Color = 16119543
-        ImageIndex = 2
-        Caption = #24863#26579#39044#35686
-      end
-      object RzTabSheet3: TRzTabSheet
-        Color = 16119543
-        ImageIndex = 5
-        Caption = #24863#26579#19978#25253
-      end
-      object RzTabSheet4: TRzTabSheet
-        Color = 16119543
-        ImageIndex = 6
-        Caption = 'ICU'#30417#27979
-      end
-      object RzTabSheet5: TRzTabSheet
-        Color = 16119543
-        Caption = #22810#37325#32784#33647#33740#31649#29702
-      end
-      object RzTabSheet6: TRzTabSheet
-        Color = 16119543
-        ImageIndex = 3
-        TabEnabled = False
-        Caption = #30149#20363'-'#24352#19977#65288'1'#65289
-      end
-      object RzTabSheet7: TRzTabSheet
-        Color = 16119543
-        Caption = #30149#20363#26446#22235#65288'2'#65289
-      end
-      object RzTabSheet8: TRzTabSheet
-        Color = 16119543
-        Caption = #31995#32479#35774#32622
+        Caption = #24863#25511#39318#39029
       end
     end
   end
@@ -983,7 +977,7 @@ object frmMain: TfrmMain
     Left = 260
     Top = 140
     Bitmap = {
-      494C01012C006C00C80020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01012C006C00CC0020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000008001000001002000000000000000
       0300000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

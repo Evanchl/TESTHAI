@@ -32,7 +32,9 @@ uses
   dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
   dxSkinXmas2008Blue, dxSkinscxPCPainter, dxBarBuiltInMenu, cxPC,uDM,
-  System.Generics.Collections,ufrmFindData;
+  System.Generics.Collections,ufrmFindData, dxSkinsdxNavBarPainter,
+  dxSkinsdxNavBarAccordionViewPainter, dxNavBarCollns, cxClasses, dxNavBarBase,
+  dxNavBar;
 
 type
   TfrmMain = class(TForm)
@@ -82,14 +84,7 @@ type
     btn1: TSpeedButton;
     btn2: TSpeedButton;
     btnEdtPat: TRzButtonEdit;
-    pnlGroupBar: TRzSizePanel;
-    RzGroupBar1: TRzGroupBar;
-    grpVclStyles: TRzGroup;
-    cbxVclStyles: TRzComboBox;
-    grpDemos: TRzGroup;
-    grpVisualStyles: TRzGroup;
-    grpGroupBarStyles: TRzGroup;
-    grpToolbar: TRzGroup;
+    pnlNavigate: TRzSizePanel;
     sbrMain: TRzStatusBar;
     RzClockStatus1: TRzClockStatus;
     RzKeyStatus1: TRzKeyStatus;
@@ -107,14 +102,28 @@ type
     RzBorder2: TRzBorder;
     RzBorder3: TRzBorder;
     pgcPreview: TRzPageControl;
-    RzTabSheet1: TRzTabSheet;
-    RzTabSheet2: TRzTabSheet;
-    RzTabSheet3: TRzTabSheet;
-    RzTabSheet4: TRzTabSheet;
-    RzTabSheet5: TRzTabSheet;
-    RzTabSheet6: TRzTabSheet;
-    RzTabSheet7: TRzTabSheet;
-    RzTabSheet8: TRzTabSheet;
+    tsHome: TRzTabSheet;
+    dxNavBar1: TdxNavBar;
+    dxNavBar1Group1: TdxNavBarGroup;
+    dxNavBar1Group2: TdxNavBarGroup;
+    dxNavBar1Group3: TdxNavBarGroup;
+    dxNavBar1Group4: TdxNavBarGroup;
+    dxNavBar1Group5: TdxNavBarGroup;
+    dxNavBar1Item1: TdxNavBarItem;
+    dxNavBar1Item2: TdxNavBarItem;
+    dxNavBar1Item3: TdxNavBarItem;
+    dxNavBar1Item4: TdxNavBarItem;
+    dxNavBar1Item5: TdxNavBarItem;
+    dxNavBar1Item6: TdxNavBarItem;
+    dxNavBar1Item7: TdxNavBarItem;
+    dxNavBar1Item8: TdxNavBarItem;
+    dxNavBar1Item9: TdxNavBarItem;
+    RzButton1: TRzButton;
+    RzButton2: TRzButton;
+    RzButton3: TRzButton;
+    RzButton4: TRzButton;
+    RzButton5: TRzButton;
+    RzButton6: TRzButton;
     procedure actWelcomeExecute(Sender: TObject);
     procedure actCustomFramingExecute(Sender: TObject);
     procedure actTabsExecute(Sender: TObject);
@@ -139,6 +148,7 @@ type
     { Private declarations }
     procedure AddTabSheet(AfrmClass: TFormClass; ACaption: string;AParams: array of PChar);overload;
     procedure AddTabSheet(AFormCategory, ACaption: PChar;AParams: array of PChar);overload;
+    procedure AddHome;
 
   public
     { Public declarations }
@@ -150,7 +160,7 @@ var
 
 implementation
 uses
-  uLoadDll;
+  uLoadDll, ufrmHome;
 
 {$R *.dfm}
 
@@ -223,6 +233,12 @@ end;
 procedure TfrmMain.actWidgetsExecute(Sender: TObject);
 begin
 //
+end;
+
+procedure TfrmMain.AddHome;
+begin
+  frmHome := TfrmHome.CreateParented(tsHome.Handle);
+  frmHome.Show;
 end;
 
 procedure TfrmMain.AddTabSheet(AFormCategory, ACaption: PChar;AParams: array of PChar);
@@ -388,6 +404,7 @@ begin
   SetWindowLong(Handle, GWL_STYLE, GetWindowLong(Handle, GWL_STYLE) xor WS_CAPTION);
   Height := ClientHeight;
   Width := ClientWidth;
+  AddHome;
 end;
 
 procedure TfrmMain.pgcPreviewClose(Sender: TObject; var AllowClose: Boolean);
