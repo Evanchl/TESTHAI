@@ -15,9 +15,6 @@
         <Projects Include="Common\HMKJ_Comm.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="DES\HMKJ_DES.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="Login\Login.dproj">
             <Dependencies/>
         </Projects>
@@ -71,15 +68,6 @@
     <Target Name="HMKJ_Comm:Make">
         <MSBuild Projects="Common\HMKJ_Comm.dproj" Targets="Make"/>
     </Target>
-    <Target Name="HMKJ_DES">
-        <MSBuild Projects="DES\HMKJ_DES.dproj"/>
-    </Target>
-    <Target Name="HMKJ_DES:Clean">
-        <MSBuild Projects="DES\HMKJ_DES.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="HMKJ_DES:Make">
-        <MSBuild Projects="DES\HMKJ_DES.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Login">
         <MSBuild Projects="Login\Login.dproj"/>
     </Target>
@@ -108,13 +96,13 @@
         <MSBuild Projects="Test\Project1.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="HAIMIS;PatientInfo;HMKJ_DBConn;HMKJ_Comm;HMKJ_DES;Login;InfectReport;Project1"/>
+        <CallTarget Targets="HAIMIS;PatientInfo;HMKJ_DBConn;HMKJ_Comm;Login;InfectReport;Project1"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="HAIMIS:Clean;PatientInfo:Clean;HMKJ_DBConn:Clean;HMKJ_Comm:Clean;HMKJ_DES:Clean;Login:Clean;InfectReport:Clean;Project1:Clean"/>
+        <CallTarget Targets="HAIMIS:Clean;PatientInfo:Clean;HMKJ_DBConn:Clean;HMKJ_Comm:Clean;Login:Clean;InfectReport:Clean;Project1:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="HAIMIS:Make;PatientInfo:Make;HMKJ_DBConn:Make;HMKJ_Comm:Make;HMKJ_DES:Make;Login:Make;InfectReport:Make;Project1:Make"/>
+        <CallTarget Targets="HAIMIS:Make;PatientInfo:Make;HMKJ_DBConn:Make;HMKJ_Comm:Make;Login:Make;InfectReport:Make;Project1:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

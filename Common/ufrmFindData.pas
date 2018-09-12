@@ -59,6 +59,7 @@ type
     btnConfirm: TRzButton;
     btnCancel: TRzButton;
     dsData1: TClientDataSet;
+    btnConfig: TRzButton;
     procedure FormCreate(Sender: TObject);
     procedure cxGrid1DBTableView1CellDblClick(Sender: TcxCustomGridTableView;
       ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
@@ -67,6 +68,7 @@ type
     procedure cxGrid1DBTableView1CellClick(Sender: TcxCustomGridTableView;
       ACellViewInfo: TcxGridTableDataCellViewInfo; AButton: TMouseButton;
       AShift: TShiftState; var AHandled: Boolean);
+    procedure btnConfigClick(Sender: TObject);
   private
     FCommonQueryId: Integer;
     FColsWidth: Integer;
@@ -81,7 +83,11 @@ type
     { Private declarations }
   public
     { Public declarations }
+    //不提供SQL直接由外部提供数据集
+    procedure SetDataSet(ADataSet: TDataSet);
+    //根据通用查询设置表格字段
     property CommonQueryId: Integer read FCommonQueryId write SetCommonQueryId;
+    //通用查询语句
     property SQL: string read FSQL write SetSQL;
     //是否多选模式  多选模式先设置MultiType 再设置其他属性
     property MultiType: Boolean read FMultiType write FMultiType;
@@ -94,6 +100,8 @@ type
     //选中的名字
     property SelectedItemNames: string read FSelectedItemNames write FSelectedItemNames;
     //目前只提供项目名称和值其他由自己写程序控制
+
+
   end;
 implementation
 
@@ -130,11 +138,38 @@ begin
   qryTemp.Connection := DM.conHAIMIS;
 end;
 
+procedure TfrmFindData.btnConfigClick(Sender: TObject);
+var
+  vQry: TADOQuery;
+  i: Integer;
+begin
+  //是否控制只有管理员才能看到该按钮
+  vQry := TADOQuery.Create(nil);
+  try
+    vQry.Connection := DM.conHAIMIS;
+    vQry.SQL.Text := 'SELECT * FROM T_COMMON_QUERY_FIELD WHERE COMMON_QUERY_ID = ' + IntToStr(FCommonQueryId);
+    vQry.Open;
+    for I := 0 to cxGrid1DBTableView1.ColumnCount -1 do
+    begin
+      if vQry.Locate('FIELD_NAME',cxGrid1DBTableView1.Columns[i].DataBinding.FieldName,[]) then
+      begin
+        vQry.Edit;
+        vQry.FieldByName('DISPLAY_NO').AsInteger := i+1;
+        vQry.FieldByName('SHOW_WIDTH').AsInteger := cxGrid1DBTableView1.Columns[i].Width;
+        vQry.Post;
+      end;
+    end;
+
+  finally
+    vQry.Free;
+  end;
+end;
+
 procedure TfrmFindData.btnConfirmClick(Sender: TObject);
 begin
-  if FMultiType then
+  with cxGrid1DBTableView1.DataController.DataSource.DataSet do
   begin
-    with dsData1 do
+    if FMultiType then
     begin
       DisableControls;
       try
@@ -142,12 +177,12 @@ begin
         First;
         while not eof do
         begin
-          if (cxGrid1DBTableView1.DataController.DataSource.DataSet.FieldByName('SELECT_FLAG').AsBoolean) then
+          if (FieldByName('SELECT_FLAG').AsBoolean) then
           begin
             if (FItemValueField <> '') then
-              FSelectedItemValues := FSelectedItemValues + ',' + FieldByName(FItemNameField).AsString;
-            if FSelectedItemValues <> '' then
-              FSelectedItemNames := FSelectedItemNames + ',' + FieldByName(FItemValueField).AsString;
+              FSelectedItemValues := FSelectedItemValues + ',' + FieldByName(FItemValueField).AsString;
+            if FItemNameField <> '' then
+              FSelectedItemNames := FSelectedItemNames + ',' + FieldByName(FItemNameField).AsString;
           end;
           Next;
         end;
@@ -159,16 +194,16 @@ begin
       if Pos(',', FSelectedItemNames)=1 then
         System.Delete(FSelectedItemNames,1,1);
       Self.ModalResult := mrOk;
-    end;
-  end
-  else begin
-    if qryData.RecordCount > 0 then
-    begin
-      if FItemValueField <> '' then
-        SelectedItemValues := qryData.FieldByName(FItemValueField).AsString;
-      if FSelectedItemValues <> '' then
-        SelectedItemNames := qryData.FieldByName(FSelectedItemValues).AsString;
-      Self.ModalResult := mrOk;
+    end
+    else begin
+      if RecordCount > 0 then
+      begin
+        if FItemValueField <> '' then
+          SelectedItemValues := FieldByName(FItemValueField).AsString;
+        if FItemNameField <> '' then
+          SelectedItemNames := FieldByName(FItemNameField).AsString;
+        Self.ModalResult := mrOk;
+      end;
     end;
   end;
 end;
@@ -178,7 +213,7 @@ begin
   with qryTemp do
   begin
     SQL.Text := 'select * from T_Common_Query_Field where COMMON_QUERY_ID = ' + IntToStr(Value) +
-      ' And SHOW_FLAG = ''Y'' order by DISPLAY_ORDER ';
+      ' And SHOW_FLAG = ''Y'' order by DISPLAY_NO ';
     Open;
     cxGrid1DBTableView1.ClearItems;
     //多选增加多选列
@@ -210,7 +245,21 @@ begin
         Self.Height := 600;
     end;
   end;
+  //保存配置按钮显示
+  btnConfig.Visible := True;
   FCommonQueryId := Value;
+end;
+
+procedure TfrmFindData.SetDataSet(ADataSet: TDataSet);
+begin
+  CreateCDSColumnByDataSet(dsData1,ADataSet,FMultiType);
+  SetDataSetFieldPosition(TDataSet(dsData1));
+  CdsCopyDataFromDataSet(dsData1,ADataSet,FMultiType);
+  //不根据数据库配置数据字段
+  if FCommonQueryId = 0 then
+    CreateGridCloumnsByData(cxGrid1DBTableView1,dsData1);
+  dsData.DataSet := dsData1;
+  cxGrid1DBTableView1.DataController.DataSource := dsData;
 end;
 
 procedure TfrmFindData.SetSQL(const Value: string);
@@ -228,6 +277,9 @@ begin
     SetDataSetFieldPosition(TDataSet(qryData));
     dsData.DataSet := qryData;
   end;
+  //不根据数据库配置数据字段
+  if FCommonQueryId = 0 then
+    CreateGridCloumnsByData(cxGrid1DBTableView1,dsData.DataSet);
   cxGrid1DBTableView1.DataController.DataSource := dsData;
   FSQL := Value;
 end;

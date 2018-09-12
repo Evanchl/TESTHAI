@@ -335,10 +335,6 @@ object frmPatientInfo: TfrmPatientInfo
       Color = 16119543
       ImageIndex = 1
       Caption = #30149#26696#39318#39029
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tabFonts: TRzTabSheet
       Color = 16119543

@@ -99,7 +99,7 @@ begin
   begin
     Close();
     SQL.Text :=
-      'SELECT HAIS_INPATIENT_ID,    '+
+      'SELECT HAI_INPATIENT_ID,    '+
       '     HIS_INPATIENT_ID,       '+
       '     PATIENT_ID,             '+
       '     VISIT_ID,               '+
@@ -114,7 +114,7 @@ begin
       '     DIAGNOSIS,              '+
       '     IN_CHARGE_DOC,          '+
       '     NEWBABY_WEIGH_ACTUAL    '+
-      '  FROM   T_IN_PATIENTS where HAIS_INPATIENT_ID =  ' + APatID;
+      '  FROM   T_IN_PATIENTS where HAI_INPATIENT_ID =  ' + APatID;
     Open;
     if RecordCount > 0 then
     begin

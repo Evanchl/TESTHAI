@@ -115,6 +115,16 @@ object frmFindData: TfrmFindData
       Caption = #21462#28040
       TabOrder = 1
     end
+    object btnConfig: TRzButton
+      Left = 208
+      Top = 6
+      Width = 96
+      Anchors = [akRight, akBottom]
+      Caption = #20445#23384#26174#31034#37197#32622
+      TabOrder = 2
+      Visible = False
+      OnClick = btnConfigClick
+    end
   end
   object qryTemp: TADOQuery
     LockType = ltReadOnly

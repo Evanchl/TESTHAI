@@ -772,62 +772,34 @@ object frmMain: TfrmMain
         Color = 16119543
         ImageIndex = 2
         Caption = #24863#26579#39044#35686
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
       end
       object RzTabSheet3: TRzTabSheet
         Color = 16119543
         ImageIndex = 5
         Caption = #24863#26579#19978#25253
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
       end
       object RzTabSheet4: TRzTabSheet
         Color = 16119543
         ImageIndex = 6
         Caption = 'ICU'#30417#27979
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
       end
       object RzTabSheet5: TRzTabSheet
         Color = 16119543
         Caption = #22810#37325#32784#33647#33740#31649#29702
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
       end
       object RzTabSheet6: TRzTabSheet
         Color = 16119543
         ImageIndex = 3
         TabEnabled = False
         Caption = #30149#20363'-'#24352#19977#65288'1'#65289
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
       end
       object RzTabSheet7: TRzTabSheet
         Color = 16119543
         Caption = #30149#20363#26446#22235#65288'2'#65289
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
       end
       object RzTabSheet8: TRzTabSheet
         Color = 16119543
         Caption = #31995#32479#35774#32622
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 0
-        ExplicitHeight = 0
       end
     end
   end
@@ -1011,7 +983,7 @@ object frmMain: TfrmMain
     Left = 260
     Top = 140
     Bitmap = {
-      494C01012C006C00C40020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01012C006C00C80020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000008001000001002000000000000000
       0300000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

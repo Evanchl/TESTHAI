@@ -32,7 +32,7 @@ uses
   dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
   dxSkinXmas2008Blue, dxSkinscxPCPainter, dxBarBuiltInMenu, cxPC,uDM,
-  System.Generics.Collections;
+  System.Generics.Collections,ufrmFindData;
 
 type
   TfrmMain = class(TForm)
@@ -283,6 +283,7 @@ var
   vContion: string;
   vPatientID: Integer;
   frm: TfrmSearchPatList;
+  vfrm: TfrmFindData;
   //frmPatInfo: TfrmPatientInfo;
   tabSheet: TRzTabSheet;
   vParams: array of PChar;
@@ -296,7 +297,7 @@ begin
     try
       qry.Connection := DM.conHAIMIS;
       qry.SQL.Text :=
-        'SELECT HAIS_INPATIENT_ID,     '+
+        'SELECT HAI_INPATIENT_ID,     '+
         '       VISIT_ID,              '+
         '       PATIENT_NAME,          '+
         '       SEX,                   '+
@@ -307,25 +308,39 @@ begin
         '       OUT_DATE,              '+
         '       DIAGNOSIS              '+
         'FROM   T_IN_PATIENTS          '+
-        'WHERE  INP_NO = ' + QuotedStr(vContion) +
+        'WHERE  PATIENT_USED_CODE = ' + QuotedStr(vContion) +
         '        OR PATIENT_NAME =' + QuotedStr(vContion);
       qry.Open;
       if qry.RecordCount = 1 then
       begin
-        vPatientID := qry.FieldByName('HAIS_INPATIENT_ID').AsInteger;
+        vPatientID := qry.FieldByName('HAI_INPATIENT_ID').AsInteger;
       end
       else if qry.RecordCount = 0 then
         Exit
       else begin
-        frm := TfrmSearchPatList.Create(nil);
+        //采用公共方法
+        vfrm := TfrmFindData.Create(nil);
         try
-          frm.dsPatList.DataSet := qry;
-          frm.ShowModal;
-          if frm.ModalResult = mrOk then
-            vPatientID := qry.FieldByName('HAIS_INPATIENT_ID').AsInteger
+          vfrm.Caption := '选择病人';
+          vfrm.ItemValueField := 'HAI_INPATIENT_ID';
+          vfrm.SetDataSet(qry);
+          vfrm.CommonQueryId := 2;
+          if vfrm.ShowModal = mrOk then
+          begin
+            vPatientID := StrToInt(vfrm.SelectedItemValues);
+          end;
         finally
-          frm.Free;
+          vfrm.Free;
         end;
+//        frm := TfrmSearchPatList.Create(nil);
+//        try
+//          frm.dsPatList.DataSet := qry;
+//          frm.ShowModal;
+//          if frm.ModalResult = mrOk then
+//            vPatientID := qry.FieldByName('HAI_INPATIENT_ID').AsInteger
+//        finally
+//          frm.Free;
+//        end;
       end;
       if vPatientID > 0 then
       begin

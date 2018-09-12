@@ -41,9 +41,9 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <DCC_DcpOutput>E:\HAIMIS\TESTHAI\Win32\Debug</DCC_DcpOutput>
+        <DCC_DcpOutput>..\bin</DCC_DcpOutput>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <DCC_BplOutput>E:\HAIMIS\TESTHAI\Win32\Debug</DCC_BplOutput>
+        <DCC_BplOutput>..\bin</DCC_BplOutput>
         <VerInfo_Locale>2052</VerInfo_Locale>
         <DCC_CBuilderOutput>All</DCC_CBuilderOutput>
         <GenDll>true</GenDll>
@@ -51,7 +51,7 @@
         <SanitizedProjectName>HMKJ_DBConn</SanitizedProjectName>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
-        <DCC_DcuOutput>E:\HAIMIS\TESTHAI\dcu\</DCC_DcuOutput>
+        <DCC_DcuOutput>..\dcu</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
@@ -61,7 +61,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <Debugger_HostApplication>E:\NIMIS\Win32\Debug\HAIMIS.exe</Debugger_HostApplication>
-        <DCC_BplOutput>E:\NIMIS\Win32\Debug\</DCC_BplOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1033</VerInfo_Locale>
@@ -75,8 +74,9 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_BplOutput>..\bin</DCC_BplOutput>
         <Debugger_HostApplication>E:\NIMIS\Win32\Debug\HAIMIS.exe</Debugger_HostApplication>
-        <DCC_DcuOutput>E:\HAIMIS\TESTHAI\dcu</DCC_DcuOutput>
+        <DCC_DcuOutput>..\dcu</DCC_DcuOutput>
         <VerInfo_Keys>CompanyName=广州恒明科技;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
@@ -91,8 +91,6 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <DCC_BplOutput>E:\HAIMIS\Win32\Debug\</DCC_BplOutput>
-        <DCC_DcpOutput>E:\HAIMIS\Win32\Debug\</DCC_DcpOutput>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -102,7 +100,6 @@
         <DCCReference Include="vcl.dcp"/>
         <DCCReference Include="dbrtl.dcp"/>
         <DCCReference Include="adortl.dcp"/>
-        <DCCReference Include="HMKJ_DES.dcp"/>
         <DCCReference Include="uDataSourceInfo.pas"/>
         <DCCReference Include="uDM.pas">
             <Form>DM</Form>
@@ -113,6 +110,7 @@
             <Form>frmDBSetting</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="uDES.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -160,22 +158,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\HMKJ_DBConn.bpl" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="E:\NIMIS\Win32\Debug\HMKJ_DBConn.bpl" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>HMKJ_DBConn.bpl</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployClass Name="DependencyModule">
-                    <Platform Name="Win32">
-                        <Operation>0</Operation>
-                        <Extensions>.dll;.bpl</Extensions>
-                    </Platform>
-                    <Platform Name="OSX32">
-                        <Operation>1</Operation>
-                        <Extensions>.dylib</Extensions>
-                    </Platform>
-                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
                 <DeployClass Name="ProjectOSXResource">
                     <Platform Name="OSX32">
                         <RemoteDir>Contents\Resources</RemoteDir>
@@ -486,7 +475,16 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>

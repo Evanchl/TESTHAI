@@ -23,7 +23,7 @@ Main/Win32/*
 *.local
 *.identcache
 *.skincfg
-
+bin/*
 
 
 

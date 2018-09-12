@@ -32,12 +32,12 @@ requires
   rtl,
   vcl,
   dbrtl,
-  adortl,
-  HMKJ_DES;
+  adortl;
 
 contains
   uDataSourceInfo in 'uDataSourceInfo.pas',
   uDM in 'uDM.pas' {DM: TDataModule},
-  ufrmDBSetting in 'ufrmDBSetting.pas' {frmDBSetting};
+  ufrmDBSetting in 'ufrmDBSetting.pas' {frmDBSetting},
+  uDES in 'uDES.pas';
 
 end.

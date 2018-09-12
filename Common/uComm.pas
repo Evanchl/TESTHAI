@@ -14,6 +14,8 @@ uses Classes,DB,DBClient,ADODB,cxGridCustomView, cxGridCustomTableView,cxGridDBT
   procedure SetDataSetFieldPosition(ADataSet: TDataSet; AAlignment: TAlignment = taLeftJustify);
   //创建列字段
   procedure CreateGridColumns(AcxgDBTableView: TcxGridDBTableView;AFieldName,ACaption: string;AWidth: Integer;AMergeFlag: Boolean);
+  //根据数据集创建列字段
+  procedure CreateGridCloumnsByData(AcxgDBTableView: TcxGridDBTableView;ADataSet: TDataSet);
   //建立基础数据缓存
   procedure CreateBaseDataCache;
   //重新某个基础数据缓存
@@ -51,6 +53,19 @@ begin
   cxcol.Width := AWidth;
   if AMergeFlag then
     cxcol.Options.CellMerging := True;
+end;
+
+procedure CreateGridCloumnsByData(AcxgDBTableView: TcxGridDBTableView;ADataSet: TDataSet);
+var
+  cxcol: TcxGridDBColumn;
+  i: Integer;
+begin
+  AcxgDBTableView.ClearItems;
+  for I := 0 to ADataSet.FieldCount -1 do
+  begin
+    cxcol := AcxgDBTableView.CreateColumn;
+    cxcol.DataBinding.FieldName := ADataSet.Fields[i].FieldName;
+  end;
 end;
 
 procedure CreateBaseDataCache;

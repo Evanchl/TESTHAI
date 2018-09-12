@@ -5,7 +5,6 @@ uses
   Winapi.ActiveX,
   ufrmLogin,
   ufrmMain in 'ufrmMain.pas' {frmMain},
-  ufrmSearchPatList in 'ufrmSearchPatList.pas' {frmSearchPatList},
   uLoadDll in 'uLoadDll.pas';
 
 {$R *.res}
