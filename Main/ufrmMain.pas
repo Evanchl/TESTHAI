@@ -150,7 +150,7 @@ var
 
 implementation
 uses
-  ufrmSearchPatList,uLoadDll;
+  uLoadDll;
 
 {$R *.dfm}
 
@@ -282,9 +282,7 @@ var
   qry: TADOQuery;
   vContion: string;
   vPatientID: Integer;
-  frm: TfrmSearchPatList;
   vfrm: TfrmFindData;
-  //frmPatInfo: TfrmPatientInfo;
   tabSheet: TRzTabSheet;
   vParams: array of PChar;
 begin
@@ -332,15 +330,6 @@ begin
         finally
           vfrm.Free;
         end;
-//        frm := TfrmSearchPatList.Create(nil);
-//        try
-//          frm.dsPatList.DataSet := qry;
-//          frm.ShowModal;
-//          if frm.ModalResult = mrOk then
-//            vPatientID := qry.FieldByName('HAI_INPATIENT_ID').AsInteger
-//        finally
-//          frm.Free;
-//        end;
       end;
       if vPatientID > 0 then
       begin
