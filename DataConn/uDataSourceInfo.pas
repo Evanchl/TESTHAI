@@ -8,7 +8,7 @@ unit uDataSourceInfo;
 
 interface
 uses
-  IniFiles,SysUtils,uDES;
+  IniFiles,SysUtils;
 
   const NIMISDB_SECTION = 'NIMISDB';
 
@@ -25,6 +25,7 @@ var
   procedure WriteDbConnectInfo(vSectionName,vHost,vDbName,vDbUser,vDbPwd:string);
 
 implementation
+uses uDES;
 
 const DES_KEY = 'HMKJ@!';
 

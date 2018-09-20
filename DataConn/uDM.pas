@@ -115,6 +115,8 @@ begin
     if frm.ModalResult <> mrOk then
     begin
       Application.Terminate;
+      //不退出，程序窗口一直闪
+      Exit;
     end;
     //连接数据库
     ConnectDB();
