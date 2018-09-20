@@ -11,6 +11,7 @@ object frmBase: TfrmBase
   Font.Name = #24494#36719#38597#40657
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   PixelsPerInch = 96
   TextHeight = 20
 end

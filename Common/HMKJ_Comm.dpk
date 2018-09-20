@@ -34,7 +34,6 @@ requires
   dbrtl,
   adortl,
   RaizeComponentsVcl240,
-  HMKJ_DBConn,
   vclimg,
   vcldb,
   dxCoreRS24,
@@ -98,12 +97,15 @@ requires
   dxSkinVisualStudio2013BlueRS24,
   dxSkinVisualStudio2013DarkRS24,
   dxSkinVisualStudio2013LightRS24,
-  dsnap;
+  dsnap,
+  HMKJ_DBConn;
 
 contains
   ufrmBase in 'ufrmBase.pas' {frmBase},
   uUser in 'uUser.pas',
   uComm in 'uComm.pas',
-  ufrmFindData in 'ufrmFindData.pas' {frmFindData};
+  ufrmFindData in 'ufrmFindData.pas' {frmFindData},
+  DesignHookUtils in 'DesignHookUtils.pas',
+  ufrmGridSet in 'ufrmGridSet.pas' {frmGridSet};
 
 end.
