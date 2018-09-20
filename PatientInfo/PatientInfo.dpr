@@ -50,7 +50,7 @@ begin
   else
     Exit;
   frm := vfrmClass.CreateParented(AParentWinControl.Handle);
-
+  frm.Parent := AParentWinControl;
   frm.Align := alClient;
   frm.BorderStyle := bsNone;
   TfrmPatientInfo(frm).FormInit(AParams);

@@ -1,4 +1,4 @@
-object frmPatientInfo: TfrmPatientInfo
+﻿object frmPatientInfo: TfrmPatientInfo
   Left = 0
   Top = 0
   Caption = #24739#32773#35786#30103#20449#24687
@@ -11,7 +11,7 @@ object frmPatientInfo: TfrmPatientInfo
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poDefault
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -55,7 +55,7 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblInNo: TRzLabel
-      Left = 78
+      Left = 70
       Top = 10
       Width = 64
       Height = 20
@@ -68,7 +68,7 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblBedNo1: TRzLabel
-      Left = 186
+      Left = 169
       Top = 10
       Width = 42
       Height = 20
@@ -81,7 +81,7 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblBedNo: TRzLabel
-      Left = 228
+      Left = 208
       Top = 10
       Width = 18
       Height = 20
@@ -94,7 +94,7 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblSex1: TRzLabel
-      Left = 287
+      Left = 255
       Top = 10
       Width = 42
       Height = 20
@@ -107,7 +107,7 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblSex: TRzLabel
-      Left = 330
+      Left = 298
       Top = 10
       Width = 14
       Height = 20
@@ -120,7 +120,7 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblAge1: TRzLabel
-      Left = 381
+      Left = 337
       Top = 10
       Width = 42
       Height = 20
@@ -133,8 +133,8 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblDept1: TRzLabel
-      Left = 381
-      Top = 46
+      Left = 449
+      Top = 10
       Width = 42
       Height = 20
       Caption = #31185#23460#65306
@@ -146,8 +146,8 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblDept: TRzLabel
-      Left = 423
-      Top = 46
+      Left = 494
+      Top = 10
       Width = 98
       Height = 20
       Caption = #37325#30151#21307#23398#31185#30149#21306
@@ -159,8 +159,8 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblInChargeDoc1: TRzLabel
-      Left = 620
-      Top = 46
+      Left = 664
+      Top = 10
       Width = 70
       Height = 20
       Caption = #20027#31649#21307#29983#65306
@@ -172,8 +172,8 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblInChargeDoc: TRzLabel
-      Left = 697
-      Top = 46
+      Left = 730
+      Top = 10
       Width = 42
       Height = 20
       Caption = #26753#29233#32418
@@ -185,8 +185,8 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblDiag1: TRzLabel
-      Left = 624
-      Top = 10
+      Left = 421
+      Top = 46
       Width = 70
       Height = 20
       Caption = #20837#38498#35786#26029#65306
@@ -198,8 +198,8 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblDiag: TRzLabel
-      Left = 697
-      Top = 10
+      Left = 494
+      Top = 46
       Width = 42
       Height = 20
       Caption = #39135#31649#30284
@@ -224,11 +224,11 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblInDate: TRzLabel
-      Left = 78
+      Left = 70
       Top = 46
-      Width = 76
+      Width = 134
       Height = 20
-      Caption = '2018-04-11'
+      Caption = '2018-04-11 13:05:59'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlue
       Font.Height = -14
@@ -237,7 +237,7 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblOutDate1: TRzLabel
-      Left = 177
+      Left = 208
       Top = 46
       Width = 70
       Height = 20
@@ -250,11 +250,11 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblOutDate: TRzLabel
-      Left = 259
+      Left = 275
       Top = 46
-      Width = 76
+      Width = 134
       Height = 20
-      Caption = '2018-04-20'
+      Caption = '2018-04-20 13:05:59'
       Font.Charset = ANSI_CHARSET
       Font.Color = clBlue
       Font.Height = -14
@@ -263,7 +263,7 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblNewBabyWeigh1: TRzLabel
-      Left = 477
+      Left = 826
       Top = 10
       Width = 84
       Height = 20
@@ -274,9 +274,10 @@ object frmPatientInfo: TfrmPatientInfo
       Font.Name = #24494#36719#38597#40657
       Font.Style = []
       ParentFont = False
+      Visible = False
     end
     object lblNewBabyWeigh: TRzLabel
-      Left = 567
+      Left = 916
       Top = 10
       Width = 41
       Height = 20
@@ -289,7 +290,7 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object lblAge: TRzLabel
-      Left = 423
+      Left = 379
       Top = 10
       Width = 30
       Height = 20
@@ -302,11 +303,12 @@ object frmPatientInfo: TfrmPatientInfo
       ParentFont = False
     end
     object bntModifyWeigh: TRzButton
-      Left = 768
-      Top = 46
+      Left = 826
+      Top = 40
       Width = 97
       Caption = #20462#27491#26032#29983#20799#20307#37325
       TabOrder = 0
+      Visible = False
     end
   end
   object pgcPreview: TRzPageControl
@@ -315,7 +317,7 @@ object frmPatientInfo: TfrmPatientInfo
     Width = 957
     Height = 310
     Hint = ''
-    ActivePage = tabDates
+    ActivePage = tabSearch
     ActivePageDefault = tabDates
     Align = alClient
     AllowTabDragging = True
@@ -323,71 +325,202 @@ object frmPatientInfo: TfrmPatientInfo
     FlatColor = 10263441
     HotTrackColor = 13145750
     ParentColor = False
-    ShowCloseButtonOnActiveTab = True
     ShowMenuButton = True
     ShowShadow = False
     TabColors.HighlightBar = 9856100
-    TabIndex = 0
+    TabIndex = 2
     TabOrder = 1
     Transparent = True
+    OnChange = pgcPreviewChange
     FixedDimension = 19
     object tabDates: TRzTabSheet
       Color = 16119543
       ImageIndex = 1
       Caption = #30149#26696#39318#39029
     end
-    object tabFonts: TRzTabSheet
+    object tabOrders: TRzTabSheet
       Color = 16119543
       ImageIndex = 2
       Caption = #21307#22065#35760#24405
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      object cxGridOrders: TcxGrid
+        Left = 0
+        Top = 33
+        Width = 955
+        Height = 256
+        Align = alClient
+        BevelInner = bvNone
+        TabOrder = 0
+        LookAndFeel.Kind = lfUltraFlat
+        LookAndFeel.NativeStyle = False
+        LookAndFeel.SkinName = 'UserSkin'
+        object cxGridOrdersDBTableView1: TcxGridDBTableView
+          Navigator.Buttons.CustomButtons = <>
+          DataController.Summary.DefaultGroupSummaryItems = <>
+          DataController.Summary.FooterSummaryItems = <>
+          DataController.Summary.SummaryGroups = <>
+          Filtering.ColumnMRUItemsList = False
+          OptionsCustomize.ColumnHiding = True
+          OptionsData.Deleting = False
+          OptionsData.Editing = False
+          OptionsData.Inserting = False
+          OptionsSelection.CellSelect = False
+          OptionsView.DataRowHeight = 22
+          OptionsView.GridLineColor = 11842740
+          OptionsView.GroupByBox = False
+          OptionsView.HeaderHeight = 22
+          OptionsView.Indicator = True
+          OptionsView.IndicatorWidth = 15
+        end
+        object cxGridOrdersLevel1: TcxGridLevel
+          GridView = cxGridOrdersDBTableView1
+        end
+      end
+      object RzPanel2: TRzPanel
+        Left = 0
+        Top = 0
+        Width = 955
+        Height = 33
+        Align = alTop
+        BorderOuter = fsNone
+        TabOrder = 1
+        object RzCheckBox1: TRzCheckBox
+          Left = 20
+          Top = 12
+          Width = 67
+          Height = 15
+          Caption = #26174#31034#20840#37096
+          State = cbUnchecked
+          TabOrder = 0
+        end
+        object RzCheckBox2: TRzCheckBox
+          Left = 108
+          Top = 12
+          Width = 43
+          Height = 15
+          Caption = #20020#22065
+          State = cbUnchecked
+          TabOrder = 1
+        end
+        object RzCheckBox3: TRzCheckBox
+          Left = 184
+          Top = 12
+          Width = 43
+          Height = 15
+          Caption = #38271#22065
+          State = cbUnchecked
+          TabOrder = 2
+        end
+        object 呼吸机: TRzCheckBox
+          Left = 258
+          Top = 12
+          Width = 55
+          Height = 15
+          Caption = #21628#21560#26426
+          State = cbUnchecked
+          TabOrder = 3
+        end
+        object RzCheckBox4: TRzCheckBox
+          Left = 338
+          Top = 12
+          Width = 55
+          Height = 15
+          Caption = #23548#23615#31649
+          State = cbUnchecked
+          TabOrder = 4
+        end
+        object RzCheckBox5: TRzCheckBox
+          Left = 422
+          Top = 12
+          Width = 91
+          Height = 15
+          Caption = #20013#24515#38745#33033#25554#31649
+          State = cbUnchecked
+          TabOrder = 5
+        end
+        object RzCheckBox6: TRzCheckBox
+          Left = 534
+          Top = 12
+          Width = 67
+          Height = 15
+          Caption = #25239#33740#33647#29289
+          State = cbUnchecked
+          TabOrder = 6
+        end
+        object RzCheckBox7: TRzCheckBox
+          Left = 619
+          Top = 12
+          Width = 115
+          Height = 15
+          Caption = #25239#33740#33647#29289#20840#36523#32473#33647
+          State = cbUnchecked
+          TabOrder = 7
+        end
+      end
     end
     object tabSearch: TRzTabSheet
       Color = 16119543
       ImageIndex = 5
       Caption = #25163#26415#35760#24405
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      object RzPanel3: TRzPanel
+        Left = 0
+        Top = 0
+        Width = 955
+        Height = 289
+        Align = alClient
+        BorderOuter = fsNone
+        TabOrder = 0
+        object RzPanel4: TRzPanel
+          Left = 0
+          Top = 0
+          Width = 955
+          Height = 289
+          Align = alClient
+          BorderOuter = fsNone
+          TabOrder = 0
+          object cxgrdOperations: TcxGrid
+            Left = 0
+            Top = 0
+            Width = 955
+            Height = 289
+            Align = alClient
+            BevelInner = bvNone
+            TabOrder = 0
+            LookAndFeel.Kind = lfUltraFlat
+            LookAndFeel.NativeStyle = False
+            LookAndFeel.SkinName = 'UserSkin'
+            object cxgrdbcrdvwOperations: TcxGridDBCardView
+              Navigator.Buttons.CustomButtons = <>
+              DataController.DataSource = dsOperations
+              DataController.Summary.DefaultGroupSummaryItems = <>
+              DataController.Summary.FooterSummaryItems = <>
+              DataController.Summary.SummaryGroups = <>
+              OptionsView.CardIndent = 7
+            end
+            object cxgrdlvlOperations: TcxGridLevel
+              GridView = cxgrdbcrdvwOperations
+            end
+          end
+        end
+      end
     end
     object tabPrint: TRzTabSheet
       Color = 16119543
       ImageIndex = 6
       Caption = #20307#28201#21333
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tabHighlighting: TRzTabSheet
       Color = 16119543
       Caption = #26816#39564#20449#24687
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tabNotes: TRzTabSheet
       Color = 16119543
       ImageIndex = 3
       TabEnabled = False
       Caption = #30149#31243#35760#24405
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
     object tabTemplates: TRzTabSheet
       Color = 16119543
       Caption = #24433#20687#20449#24687
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object RzPageControl1: TRzPageControl
         Left = 0
         Top = 0
@@ -414,86 +547,78 @@ object frmPatientInfo: TfrmPatientInfo
           Color = 16119543
           ImageIndex = 1
           Caption = #39318#39029
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
         end
         object RzTabSheet2: TRzTabSheet
           Color = 16119543
           ImageIndex = 2
           Caption = #24863#26579#39044#35686
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
         end
         object RzTabSheet3: TRzTabSheet
           Color = 16119543
           ImageIndex = 5
           Caption = #24863#26579#19978#25253
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
         end
         object RzTabSheet4: TRzTabSheet
           Color = 16119543
           ImageIndex = 6
           Caption = 'ICU'#30417#27979
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
         end
         object RzTabSheet5: TRzTabSheet
           Color = 16119543
           Caption = #22810#37325#32784#33647#33740#31649#29702
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
         end
         object RzTabSheet6: TRzTabSheet
           Color = 16119543
           ImageIndex = 3
           TabEnabled = False
           Caption = #30149#20363'-'#24352#19977#65288'1'#65289
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
         end
         object RzTabSheet7: TRzTabSheet
           Color = 16119543
           Caption = #30149#20363#26446#22235#65288'2'#65289
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
         end
         object RzTabSheet8: TRzTabSheet
           Color = 16119543
           Caption = #31995#32479#35774#32622
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
         end
       end
     end
     object tabAutoComplete: TRzTabSheet
       Color = 16119543
       Caption = #20303#38498#27010#20917
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
   end
   object qryPatient: TADOQuery
     Parameters = <>
     Left = 89
     Top = 158
+  end
+  object qryOrders: TADOQuery
+    LockType = ltReadOnly
+    Parameters = <>
+    Left = 145
+    Top = 158
+  end
+  object dsOrders: TDataSource
+    DataSet = qryOrders
+    Left = 233
+    Top = 166
+  end
+  object cxGridPopupMenu: TcxGridPopupMenu
+    Grid = cxGridOrders
+    PopupMenus = <>
+    OnPopup = cxGridPopupMenuPopup
+    Left = 208
+    Top = 128
+  end
+  object qryOperations: TADOQuery
+    Parameters = <>
+    Left = 89
+    Top = 222
+  end
+  object dsOperations: TDataSource
+    DataSet = qryOperations
+    Left = 137
+    Top = 222
   end
 end
